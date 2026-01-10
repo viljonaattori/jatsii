@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Environment variables
+.env
+
+# PHP
+/vendor/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
