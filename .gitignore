@@ -1,7 +1,7 @@
 # Node
 node_modules/
 
-# Environment variables
+# Environment variables testi
 .env
 
 # PHP
