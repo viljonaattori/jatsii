@@ -1,21 +1,11 @@
-version: "3.9"
-
 services:
   api:
-    image: php:8.3-apache
+    build: ./api
     container_name: yatchee-api
     ports:
       - "8000:80"
     volumes:
       - ./api:/var/www/html
-    environment:
-      APACHE_DOCUMENT_ROOT: /var/www/html/public
-    command: >
-      bash -c "
-      sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf &&
-      sed -ri 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf &&
-      apache2-foreground
-      "
     depends_on:
       - db
 
