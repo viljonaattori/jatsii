@@ -32,5 +32,17 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: yatchee-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: yatchee
+      PMA_PASSWORD: yatchee
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
 volumes:
   db_data:
